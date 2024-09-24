@@ -94,7 +94,7 @@ li {
 }
 
 .complete-btn:hover {
-  background-color: #00c853; /* Darker green on hover */
+  background-color: rgb(0, 200, 83); /* Darker green on hover */
   transform: scale(1.05); /* Slightly scale button on hover */
 }
 

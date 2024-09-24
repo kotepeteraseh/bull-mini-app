@@ -4,7 +4,7 @@
       <h1>Play the Bull Coin Game</h1>
     </header>
     <main>
-      <h3 class="score">{{ totalScore }}</h3>
+      <h3 class="score">{{ totalScore }}pt</h3>
       <div class="memory-grid">
         <MemoryCard
           v-for="(card, index) in cards"
@@ -79,7 +79,7 @@ export default {
   align-items: center;
   text-align: center;
   padding: 10px;
-  background: #f3f4f6; /* Soft gray background matching Blum app aesthetics */
+  background: rgb(18, 1, 1); /* Soft gray background matching Blum app aesthetics */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px; /* Limit width for mobile view */
@@ -87,7 +87,7 @@ export default {
 }
 
 header {
-  background-color: #1e88e5; /* Header color */
+  background-color: rgb(0, 200, 83); /* Header color */
   color: white;
   padding: 15px;
   width: 100%;
@@ -105,8 +105,8 @@ main {
 }
 
 h3.score {
-  color: #d32f2f;
-  font-size: 1.4em;
+  color: #fffcfc;
+  font-size: 25px;
   margin: 10px 0;
 }
 
@@ -119,8 +119,8 @@ h3.score {
 }
 
 .reset-btn {
-  background-color: #1e88e5; /* Reset button color matching the header */
-  color: white;
+  background-color: rgb(0, 200, 83); /* Reset button color matching the header */
+  color: rgb(18, 1, 1);
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -140,7 +140,7 @@ h3.score {
   }
   
   h3.score {
-    font-size: 1.2em; /* Adjust score font size for mobile */
+    font-size: 1.8em; /* Adjust score font size for mobile */
   }
 
   .memory-grid {

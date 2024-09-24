@@ -3,14 +3,8 @@
     <div id="App" class="bull-coin-app">
       <!-- Header Section -->
       
-      <router-view />
-      <!-- Farming Action Button -->
-      <section class="action-section">
-        <router-link to="/game">
-          <button class="start-farming-btn">Start Playing</button>
-        </router-link>
-      </section>
-
+      
+       <router-view/>
       <!-- Bottom Navigation -->
       <footer class="nav-bar">
         <router-link to="/Home" class="nav-item"> 
@@ -119,14 +113,7 @@ export default {
   margin-top: 20px;
 }
 
-.start-farming-btn {
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-}
+
 
 /* Bottom Navigation Bar */
 .nav-bar {

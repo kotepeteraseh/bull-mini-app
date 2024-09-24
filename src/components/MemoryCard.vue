@@ -71,14 +71,14 @@ export default {
 
 /* Front of the card */
 .front {
-  background: linear-gradient(135deg, #FF6B6B, #FFD93D); /* Gradient for more vibrant look */
+  background: linear-gradient(135deg, #faf3f3, #fff); /* Gradient for more vibrant look */
   color: #fff; /* White text for better contrast */
   transform: rotateY(180deg); /* Initially hidden until flipped */
 }
 
 /* Back of the card */
 .back {
-  background: linear-gradient(135deg, #6BFFB8, #6BD4FF); /* Different gradient for the back */
+  background: linear-gradient(135deg, #6BFFB8, #ffee6b); /* Different gradient for the back */
   color: #fff; /* White text for contrast */
 }
 

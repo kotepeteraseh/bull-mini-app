@@ -14,7 +14,13 @@
         <h2>{{ username }}</h2>
         <p class="coin-balance">₿ {{ totalCoins }}</p>
       </section>
-
+      <router-view />
+      <!-- Farming Action Button -->
+      <section class="action-section">
+        <router-link to="/game">
+          <button class="start-farming-btn">Start Playing</button>
+        </router-link>
+      </section>
 
    </template> <!-- Reward Banner -->
    
@@ -151,5 +157,13 @@
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1.2em;
+}
+.start-farming-btn {
+  background-color: #0097a7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
 }
 </style>
