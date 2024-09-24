@@ -107,20 +107,20 @@ main {
 h3.score {
   color: #fffcfc;
   font-size: 1.8em;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns for fewer cards */
-  gap: 8px;
+  gap: 0px;
   justify-content: center;
   margin: 20px 0;
 }
 
 .reset-btn {
   background-color: rgb(0, 200, 83); /* Reset button color matching the header */
-  color: rgb(18, 1, 1);
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
