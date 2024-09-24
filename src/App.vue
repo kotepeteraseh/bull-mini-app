@@ -2,11 +2,7 @@
   <main>
     <div id="App" class="bull-coin-app">
       <!-- Header Section -->
-      <header class="app-header">
-        <h1>Bull Coin</h1>
-        <div class="menu-icon">⋮</div>
-      </header>
-
+      
       <router-view />
       <!-- Farming Action Button -->
       <section class="action-section">
