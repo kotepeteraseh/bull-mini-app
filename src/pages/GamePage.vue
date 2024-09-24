@@ -106,7 +106,7 @@ main {
 
 h3.score {
   color: #fffcfc;
-  font-size: 25px;
+  font-size: 1.8em;
   margin: 10px 0;
 }
 
