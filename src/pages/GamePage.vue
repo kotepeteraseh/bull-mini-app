@@ -79,7 +79,7 @@ export default {
   align-items: center;
   text-align: center;
   padding: 10px;
-  background: rgb(18, 1, 1); /* Soft gray background matching Blum app aesthetics */
+  background: rgb(0, 0, 0); /* Soft gray background matching Blum app aesthetics */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px; /* Limit width for mobile view */
@@ -87,7 +87,7 @@ export default {
 }
 
 header {
-  background-color: rgb(0, 200, 83); /* Header color */
+  background-color: rgb(7, 17, 11); /* Header color */
   color: white;
   padding: 15px;
   width: 100%;
@@ -119,7 +119,7 @@ h3.score {
 }
 
 .reset-btn {
-  background-color: rgb(0, 200, 83); /* Reset button color matching the header */
+  background-color: rgb(2, 15, 7); /* Reset button color matching the header */
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;

@@ -78,7 +78,7 @@ export default {
 
 /* Back of the card */
 .back {
-  background: linear-gradient(135deg, #6BFFB8, #ffee6b); /* Different gradient for the back */
+  background: linear-gradient(135deg, #f1f5f3, #ffee6b); /* Different gradient for the back */
   color: #fff; /* White text for contrast */
 }
 
