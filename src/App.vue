@@ -1,110 +1,164 @@
 <template>
-  <div id="app">
-    <header>
-      <h1>Bull Coin</h1>
-    </header>
+  <main>
+    <div id="App" class="bull-coin-app">
+      <!-- Header Section -->
+      <header class="app-header">
+        <h1>Bull Coin</h1>
+        <div class="menu-icon">⋮</div>
+      </header>
 
-    <main>
       <router-view />
-    </main>
+      <!-- Farming Action Button -->
+      <section class="action-section">
+        <router-link to="/game">
+          <button class="start-farming-btn">Start Playing</button>
+        </router-link>
+      </section>
 
-    <footer>
-      <nav>
-        <router-link to="/Home">Home</router-link>
-        <router-link to="/leaderboard">Leaderboard</router-link>
-        <router-link to="/tasks">Invite</router-link>
-      </nav>
-    </footer>
-  </div>
+      <!-- Bottom Navigation -->
+      <footer class="nav-bar">
+        <router-link to="/Home" class="nav-item"> 
+          <img src="../src/assets/home.png" alt="Home">
+          <span class="nav-title">Home</span>
+        </router-link>
+        <router-link to="/leaderboard" class="nav-item">
+          <img src="../src/assets/money.png" alt="Leaderboard">
+          <span class="nav-title">Leaderboard</span>
+        </router-link>
+        <router-link to="/tasks" class="nav-item">
+          <img src="../src/assets/friends.png" alt="Tasks">
+          <span class="nav-title">Tasks</span>
+        </router-link>
+        <router-link to="/connectwallet" class="nav-item">
+          <img src="../src/assets/wallet.png" alt="Wallet">
+          <span class="nav-title">Wallet</span>
+        </router-link>
+      </footer>
+    </div>
+  </main>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import axios from 'axios';
 
 export default {
   name: 'App',
-  mounted() {
-    this.giveReward();
+  data() {
+    return {
+      user: null,
+      totalScore: 0,
+    };
+  },
+  async created() {
+    try {
+      this.user = await this.getUserProfile();
+      this.totalScore = this.user.totalScore || 0;
+    } catch (error) {
+      console.error('Failed to load user profile:', error);
+    }
   },
   methods: {
-    ...mapActions(['giveReward']),
+    async getUserProfile() {
+      try {
+        const response = await axios.get('https://api.example.com/user/profile', {
+          headers: {
+            Authorization: `Bearer ${this.getAuthToken()}`,
+          },
+        });
+        return {
+          username: response.data.username,
+          profilePic: response.data.profilePic,
+          totalScore: response.data.totalScore || 0,
+        };
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        throw error;
+      }
+    },
+    getAuthToken() {
+      return localStorage.getItem('authToken');
+    },
+    // Navigate to Game Page
+    goToGamePage() {
+      console.log('Navigating to game page');
+      this.$router.push('/Home'); // Update to correct path
+    },
   },
 };
 </script>
 
 <style scoped>
-#app {
+/* Overall App Styling */
+.bull-coin-app {
   font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: rgb(245, 243, 243);
+  text-align: center;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  padding: 0% 0px 0px 0px;
 }
 
-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-main {
-  flex: 1;
-  padding: 20px;
-  background: #f5f5f5;
-}
-
-footer {
-  background-color: #4CAF50;
-  padding: 15px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-nav {
+/* Header Styling */
+.app-header {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: black;
 }
 
-nav a {
+.app-header h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.menu-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Action Section */
+.action-section {
+  margin-top: 20px;
+}
+
+.start-farming-btn {
+  background-color: #4a90e2;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
-nav a:hover {
-  color: #e1f5fe;
+/* Bottom Navigation Bar */
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for separation */
 }
 
-nav a.router-link-exact-active {
-  text-decoration: underline;
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: rgb(245, 243, 243); /* Text color */
+  font-size: 0.8em; /* Adjusted font size */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5em;
-  }
+.nav-item img {
+  width: 30px;
+  height: 30px;
+}
 
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin-bottom: 10px;
-  }
-
-  footer {
-    padding: 10px;
-  }
+.nav-title {
+  margin-top: 4px; /* Space between icon and title */
 }
 </style>

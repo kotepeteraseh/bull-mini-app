@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="tasks-container">
     <h2>Complete Tasks and Earn Rewards</h2>
     <ul>
@@ -48,17 +48,17 @@ export default {
 .tasks-container {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  background: #f9f9f9; /* Light background for the container */
+  background: #121212; /* Dark background for the container */
   padding: 20px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Darker shadow */
   max-width: 600px; /* Constrain width for readability */
   margin: auto; /* Center horizontally */
 }
 
 h2 {
-  color: #00796b; /* Dark teal for the title */
-  font-size: 2.5em;
+  color: #ffffff; /* White text for title */
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 
@@ -73,20 +73,20 @@ li {
 }
 
 .task {
-  background: #ffffff; /* White background for tasks */
+  background: #1f1f1f; /* Darker background for tasks */
   border-radius: 8px; /* Rounded corners */
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .complete-btn {
-  background-color: #00796b; /* Dark teal background for buttons */
-  color: white;
+  background-color: #00e676; /* Green button color */
+  color: #000000; /* Black text */
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 1em;
@@ -94,7 +94,7 @@ li {
 }
 
 .complete-btn:hover {
-  background-color: #004d40; /* Darker shade on hover */
+  background-color: #00c853; /* Darker green on hover */
   transform: scale(1.05); /* Slightly scale button on hover */
 }
 

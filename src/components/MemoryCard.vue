@@ -28,11 +28,13 @@ export default {
 
 <style scoped>
 .memory-card {
-  width: 120px;
-  height: 120px;
+  width: 100px; /* Responsive width */
+  height: 100px; /* Adjusted height for hexagon */
   position: relative;
-  perspective: 1000px;       /* Create 3D space for the flip animation */
+  perspective: 1000px; /* Create 3D space for the flip animation */
   cursor: pointer;
+  margin: 10px; /* Adjust margin for spacing */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling */
 }
 
 .inner-card {
@@ -41,6 +43,12 @@ export default {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for suspension effect */
+  border-radius: 10px; /* Rounded corners for smoother look */
+}
+
+.memory-card:hover {
+  transform: scale(1.1); /* Scale up on hover */
 }
 
 .flipped {
@@ -55,19 +63,26 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Adjust font size for mobile */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
 }
 
 /* Front of the card */
 .front {
-  background-color: #fff;
+  background: linear-gradient(135deg, #FF6B6B, #FFD93D); /* Gradient for more vibrant look */
+  color: #fff; /* White text for better contrast */
   transform: rotateY(180deg); /* Initially hidden until flipped */
 }
 
 /* Back of the card */
 .back {
-  background-color: #ffe4e1;
+  background: linear-gradient(135deg, #6BFFB8, #6BD4FF); /* Different gradient for the back */
+  color: #fff; /* White text for contrast */
+}
+
+.front:hover, .back:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); /* Enhanced shadow on hover */
 }
 </style>

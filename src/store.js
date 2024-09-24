@@ -1,25 +1,10 @@
-// store.js
+// store/index.js
+// store/index.js
 import { createStore } from 'vuex';
+import user from '../src/model/user';
 
 export default createStore({
-  state: {
-    coins: 0,
-  },
-  mutations: {
-    addCoins(state, amount) {
-      state.coins += amount;
-    },
-  },
-  actions: {
-    giveReward({ commit }) {
-      // Reward logic here (e.g., daily reward)
-      const rewardAmount = 10; // Example reward amount
-      commit('addCoins', rewardAmount);
-    },
-  },
-  getters: {
-    getCoins(state) {
-      return state.coins;
-    },
+  modules: {
+    user,
   },
 });
