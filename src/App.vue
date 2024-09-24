@@ -120,7 +120,7 @@ export default {
   display: flex;
   justify-content: space-around;
   background-color: black;
-  padding: 10px 0;
+  padding: 0px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
